@@ -3,9 +3,11 @@ let myId;
 function active(ele) {
     let selected = document.getElementsByClassName("active");
     for (element of selected) {
-        element.classList.remove("active");
+        if (element !== ele) {
+            element.classList.remove("active");
+        }
     }
-    ele.classList.add("active");
+    ele.classList.toggle("active");
 }
 
 // =====> Get All Posts <=====
